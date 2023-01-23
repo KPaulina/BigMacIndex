@@ -1,5 +1,5 @@
 # BigMacIndex
-Application in Dash created to visualize big max index
+Application in Dash created to visualize big max index data
 
 ## Technologies
 #### Dash
