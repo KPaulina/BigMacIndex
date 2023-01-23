@@ -7,6 +7,7 @@ from data import load_big_mac_data
 df_big_mac_top_5, df_big_mac = load_big_mac_data()
 
 app = Dash(name='big_mac')
+server = app.server
 
 fig = px.bar(df_big_mac_top_5,
              x='countries',
