@@ -1,5 +1,4 @@
 from dash import Dash
-import dash
 from dash import dcc, html
 import plotly.express as px
 from data import load_big_mac_data
@@ -19,14 +18,14 @@ fig = px.bar(df_big_mac_top_5,
 fig_scatter = px.scatter(df_big_mac,
                          x='country_code',
                          y='dollar_price',
-                        labels={"country_code": "Countries", "dollar_price": "Dollar price"},
-                        template="simple_white",
-                        title="Price of a Big Mac in dollars",
+                         labels={"country_code": "Countries", "dollar_price": "Dollar price"},
+                         template="simple_white",
+                         title="Price of a Big Mac in dollars",
                          )
 
 app.layout = html.Div([
                 html.Div([dcc.Graph(figure=fig),
-                       dcc.Graph(figure=fig_scatter)])
+                          dcc.Graph(figure=fig_scatter)])
 ])
 
 if __name__ == '__main__':
