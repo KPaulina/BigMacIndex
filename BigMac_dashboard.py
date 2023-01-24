@@ -12,14 +12,14 @@ server = app.server
 fig = px.bar(df_big_mac_top_5,
              x='countries',
              y='dollar_price',
-             labels={"countries": "Country", "dollar_price": "Dollar price"},
+             labels={"countries": "Countries", "dollar_price": "Dollar price"},
              title="Big Mac Index Top 5",
              template="simple_white")
 
 fig_scatter = px.scatter(df_big_mac,
                          x='country_code',
                          y='dollar_price',
-                        labels={"country_code": "currencies", "dollar_price": "Dollar price"},
+                        labels={"country_code": "Countries", "dollar_price": "Dollar price"},
                         template="simple_white",
                         title="Price of a Big Mac in dollars",
                          )
