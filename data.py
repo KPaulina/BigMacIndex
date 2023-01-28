@@ -5,10 +5,9 @@ import numpy as np
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-
-def countries_full_name_for_top_5(df: pd.DataFrame) -> pd.DataFrame:
+def add_full_names_of_countries_in_top_5(df: pd.DataFrame) -> pd.DataFrame:
     '''
-    Function created to create column that has names of the countries
+    Function created to create column that has names of the top 5 countries
     :param df:
     :return:
     '''
@@ -27,13 +26,30 @@ def countries_full_name_for_top_5(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
-def load_big_mac_data():
+def load_big_mac_data() -> pd.DataFrame:
     '''
     Function created to load data about big mac index from excel
     :return:
     '''
-    df_big_mac = pd.read_excel(os.path.join(BASE_DIR, 'big_mac_data.xlsx'))
+    return pd.read_excel(os.path.join(BASE_DIR, 'big_mac_data.xlsx'))
+
+
+def sort_by_the_highest_value(df_big_mac: pd.DataFrame) -> pd.DataFrame:
+    '''
+    Function that sorts by dollar price value from the highest value to the lowest
+    :param df_big_mac:
+    :return:
+    '''
     df_big_mac = df_big_mac.sort_values(by='dollar_price', ascending=False)
+    return df_big_mac
+
+
+def get_top_5_countries_with_highest_big_mac_index(df_big_mac: pd.DataFrame) -> pd.DataFrame:
+    '''
+    Function that gets top 5 countries with the highest big mac index
+    :param df_big_mac:
+    :return:
+    '''
     df_top_five_big_macs = df_big_mac.iloc[:5].copy()
-    df_top_five_big_macs = countries_full_name_for_top_5(df_top_five_big_macs)
-    return df_top_five_big_macs, df_big_mac
+    df_top_five_big_macs = add_full_names_of_countries_in_top_5(df_top_five_big_macs)
+    return df_top_five_big_macs
