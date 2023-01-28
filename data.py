@@ -40,8 +40,7 @@ def sort_by_the_highest_value(df_big_mac: pd.DataFrame) -> pd.DataFrame:
     :param df_big_mac:
     :return:
     '''
-    df_big_mac = df_big_mac.sort_values(by='dollar_price', ascending=False)
-    return df_big_mac
+    return df_big_mac.sort_values(by='dollar_price', ascending=False)
 
 
 def get_top_5_countries_with_highest_big_mac_index(df_big_mac: pd.DataFrame) -> pd.DataFrame:
@@ -51,5 +50,5 @@ def get_top_5_countries_with_highest_big_mac_index(df_big_mac: pd.DataFrame) -> 
     :return:
     '''
     df_top_five_big_macs = df_big_mac.iloc[:5].copy()
-    df_top_five_big_macs = add_full_names_of_countries_in_top_5(df_top_five_big_macs)
-    return df_top_five_big_macs
+    return add_full_names_of_countries_in_top_5(df_top_five_big_macs)
+
