@@ -34,6 +34,6 @@ def load_big_mac_data():
     '''
     df_big_mac = pd.read_excel(os.path.join(BASE_DIR, 'big_mac_data.xlsx'))
     df_big_mac = df_big_mac.sort_values(by='dollar_price', ascending=False)
-    df_top_five_big_macs = df_big_mac.iloc[:5]
+    df_top_five_big_macs = df_big_mac.iloc[:5].copy()
     df_top_five_big_macs = countries_full_name_for_top_5(df_top_five_big_macs)
     return df_top_five_big_macs, df_big_mac
