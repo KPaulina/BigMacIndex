@@ -9,4 +9,4 @@ Application in Dash created to visualize big max index data
 ## The aim of the project
 The aim of this project is to create a dashboard to show top 5 countries for big mac index
 
-The page can be seen here: https://bigmac-dashboard.onrender.com/
+The page has been deployed here: https://bigmac-dashboard.onrender.com/
