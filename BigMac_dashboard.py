@@ -25,6 +25,7 @@ fig_big_macs_price_in_dollars = px.scatter(df_big_mac,
                                            template="simple_white")
 
 app.layout = html.Div([
+                html.H2("Big Mac Index, lipiec 2021", style={'text-align': 'center'}),
                 html.Div([dcc.Graph(figure=fig_big_mac_index_top_5),
                           dcc.Graph(figure=fig_big_macs_price_in_dollars)])
 ])
